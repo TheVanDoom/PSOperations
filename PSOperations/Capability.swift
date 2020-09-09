@@ -6,6 +6,7 @@ public enum CapabilityError<FailedCapability: CapabilityType>: ConditionError {
     case notDetermined
     case notAvailable
     case denied
+    case limited
     case failed(Error)
 }
 
@@ -16,6 +17,7 @@ extension CapabilityError {
         case .authorized: return nil
         case .denied: self = .denied
         case .notAvailable: self = .notAvailable
+        case .limited: self = .limited
         case .error(let error): self = .failed(error)
         }
     }
@@ -33,6 +35,9 @@ public enum CapabilityStatus {
 
     /// The capability is not available (perhaps due to restrictions, or lack of support)
     case notAvailable
+    
+    /// The capability is approved with limited access
+    case limited
 
     /// There was an error requesting the status of the capability
     case error(Error)
