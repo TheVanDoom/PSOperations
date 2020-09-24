@@ -6,7 +6,7 @@
 //  Copyright © 2015 Pluralsight. All rights reserved.
 //
 
-#if !os(watchOS)
+#if !os(watchOS) && !os(Linux)
 
 import Foundation
 import CloudKit

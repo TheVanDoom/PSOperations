@@ -6,7 +6,7 @@ Abstract:
 This file shows an example of implementing the OperationCondition protocol.
 */
 
-#if !os(watchOS)
+#if !os(watchOS) && !os(Linux)
 
 import Foundation
 import SystemConfiguration

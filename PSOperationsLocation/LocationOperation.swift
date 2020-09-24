@@ -57,7 +57,7 @@ open class LocationOperation: PSOperation, CLLocationManagerDelegate {
             if #available(iOS 9.0, *) {
                 manager.requestLocation()
             } else {
-                #if !os(tvOS) && !os(watchOS)
+                #if !os(tvOS) && !os(watchOS) && !os(Linux)
                     manager.startUpdatingLocation()
                 #endif
             }
